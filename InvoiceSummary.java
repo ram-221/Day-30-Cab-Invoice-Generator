@@ -1,22 +1,25 @@
-package com.bridgelabz;
+package uc5;
 
 public class InvoiceSummary {
 
-	private  final int noOfInvoice;
-	private  final double totalFare;
-	private final double averageFare;
+	 public int numOfRides;
+	    public double totalFare;
+	    public double avgFare;
 
-	public InvoiceSummary(int noOfInvoice, double totalFare){
-		this.noOfInvoice = noOfInvoice;
-		this.totalFare = totalFare;
-		this.averageFare = this.totalFare / this.noOfInvoice;
-	}
+	    public InvoiceSummary(int numOfRides, double totalFare) {
+	        this.numOfRides = numOfRides;
+	        this.totalFare = totalFare;
+	        this.avgFare = this.totalFare / this.numOfRides;
+	    }
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
-		InvoiceSummary summary = (InvoiceSummary) o;
-		return noOfInvoice == summary.noOfInvoice && Double.compare(summary.totalFare, totalFare) == 0 && Double.compare(summary.averageFare, averageFare) == 0;
-	}
+	    @Override
+	    public boolean equals(Object o) {
+	        if (this == o)
+	            return true;
+	        if (o == null || getClass() != o.getClass())
+	            return false;
+	        InvoiceSummary that = (InvoiceSummary) o;
+	        return (numOfRides == that.numOfRides) && Double.compare(that.totalFare, totalFare) == 0
+	                && Double.compare(that.avgFare, avgFare) == 0;
+	    }
 }
